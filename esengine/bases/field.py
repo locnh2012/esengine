@@ -81,6 +81,8 @@ class BaseField(object):
         """
         if serialized is not None:
             if self._multi:
+                if not isinstance(serialized, list):
+                    serialized = [serialized]
                 return [
                     self._type(x) if x is not None else x for x in serialized
                 ]
