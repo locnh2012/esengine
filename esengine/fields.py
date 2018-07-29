@@ -132,6 +132,8 @@ class ArrayField(BaseField):
         :return: Instance or Instances of self._type
         """
         if serialized is not None:
+            if not isinstance(serialized, list):
+                serialized = [serialized]
             return [
                 self.field.from_dict(x)
                 if x is not None
