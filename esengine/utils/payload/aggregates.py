@@ -1,4 +1,4 @@
-from esengine.utils.payload.meta import BaseAggregate, MetaAggregate
+from esengine.utils.payload.meta import BaseAggregate, MetaAggregate, MetaFilterQuery
 from esengine.utils.payload.exception import NoAggregate
 
 AGGREGATES = {
@@ -88,7 +88,7 @@ AGGREGATES = {
 }
 
 
-class Aggregate(BaseAggregate):
+class Aggregate(MetaFilterQuery, BaseAggregate):
     __metaclass__ = MetaAggregate
 
     _ee_type = 'aggregate'
