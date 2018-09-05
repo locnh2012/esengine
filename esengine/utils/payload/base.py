@@ -172,3 +172,7 @@ class Payload(object):
             ]
         else:
             return [value.get(fields[0]) for value in values]
+
+    def search_after(self, search_after):
+        self._struct['search_after'] = search_after
+        return self
