@@ -109,6 +109,7 @@ class BaseDocument(object):
         instance._id = instance.id = hit.get('_id')
         instance._score = hit.get('_score')
         instance._query_fields = hit.get('fields', None)
+        instance._sort = hit.get('sort', None)
         return instance
 
     def validate(self):
